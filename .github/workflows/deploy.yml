@@ -10,11 +10,15 @@ jobs:
       - name: Get code
         uses: actions/checkout@v3
       - name: Install dependencies & cache
+        id: install-deps
         uses: ./.github/workflows/actions/cache-deps
         with:
           caching: 'false'
+      - name: Used Cache ?
+        run: echo 'Caching=${{ steps.install-deps.outputs.cached}}'
       - name: Lint code
         run: npm run lint
+
   test:
     runs-on: ubuntu-latest
     steps:
