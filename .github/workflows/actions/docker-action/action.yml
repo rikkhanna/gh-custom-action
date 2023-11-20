@@ -1,12 +1,12 @@
 name: 'Docker Action'
 description: 'Testing Docker custom action'
 inputs:
-  package-name:
+  package_name:
     description: 'Package name to display'
     required: true
     default: 'curl'
 outputs:
-  action-out:
+  action_out:
     description: 'Displaying some output of docker action'
     # value:
 runs:

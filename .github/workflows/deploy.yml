@@ -22,9 +22,9 @@ jobs:
         id: docker-action
         uses: ./.github/workflows/actions/docker-action
         with:
-          package-name: 'git'
+          package_name: 'git'
       - name: Print Docker action output
-        run: echo "${{ steps.docker-action.outputs.action-out }}"
+        run: echo "${{ steps.docker-action.outputs.action_out }}"
 
   test:
     runs-on: ubuntu-latest
