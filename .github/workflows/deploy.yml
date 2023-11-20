@@ -18,6 +18,13 @@ jobs:
         run: echo 'Caching=${{ steps.install-deps.outputs.cached}}'
       - name: Lint code
         run: npm run lint
+      - name: Using Docker custom action
+        id: docker-action
+        uses: ./.github/workflows/actions/
+        with:
+          package-name: 'git'
+      - name: Print Docker action output
+        run: echo "${{ steps.docker-action.outputs.action-out }}"
 
   test:
     runs-on: ubuntu-latest
