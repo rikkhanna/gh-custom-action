@@ -8,4 +8,4 @@ WORKDIR /app
 COPY print_values.py /app/
 
 # Run the Python script when the container starts
-CMD ["python", "print_values.py"]
+CMD ["python", "/app/print_values.py"]
