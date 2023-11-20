@@ -20,7 +20,7 @@ jobs:
         run: npm run lint
       - name: Using Docker custom action
         id: docker-action
-        uses: ./.github/workflows/actions/
+        uses: ./.github/workflows/actions/docker-action
         with:
           package-name: 'git'
       - name: Print Docker action output
