@@ -1,6 +1,6 @@
 FROM node:bullseye-slim
-COPY entrypoint.sh /app/entrypoint.sh
-RUN chmod +x /app/entrypoint.sh && \
+COPY print_values.sh /app/print_values.sh
+RUN chmod +x /app/print_values.sh && \
     apt-get -y update && \
     apt-get install -y bash git curl jq
 ENTRYPOINT ["/app/print_values.sh"]
